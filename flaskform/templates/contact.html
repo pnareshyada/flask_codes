@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Contact  Details of a person </title></head>
+    <body>
+        <h2>Students Contactform details </h2>
+
+        {% for msg in form.name.errors %}
+        <div>{{ms}}</div>
+        {% endfor %}
+
+        <form action="/contact" method="POST">
+
+        {{ form.hidden_tag }}
+
+        {{ form.name.label}} {{form.name}}    <br>
+
+        {{ form.fname.label}} {{form.fname}}   <br>
+
+        {{form.submit}}
+        </form>
+
+    </body>
+</html>

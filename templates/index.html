@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>buckets</title>
+    <style>
+        header{
+        background-color:blue;
+        }
+        h2{
+        background-color:yellow;
+        }
+        table{
+        background-color:greenyellow;
+        }
+    </style>
+</head>
+<body>
+   <center> <h2>bucket names</h2></center>
+    <center>
+        <table border="2">
+            <tr>
+                <th>bucketname Name</th>
+                <!--<th>securitygroup</th> -->
+                <th></th>
+            </tr>
+            {% for i in l1['Reservations'] %}
+            {% for j in i['s3'] %}
+            {% for k in j['name'] %}
+            <tr>
+                <td>{{k['Value']}}</td>
+                <td>{{j['s3']}}</td> 
+            
+            </tr>
+            
+            {% endfor %}
+            {% endfor %}
+            {% endfor %}
+            
+        </table>
+    </center>
+</body>
+</html>
